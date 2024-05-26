@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Quiz</h1>
+        <div id="category-section">
+            <label for="category">Pilih Kategori:</label>
+            <select id="category">
+                <option value="anxiety">Anxiety</option>
+                <option value="depression">Depression</option>
+                <!-- Tambahkan kategori lain jika perlu -->
+            </select>
+            <button id="start-quiz">Mulai Kuis</button>
+        </div>
+
+        <div id="quiz-section" style="display: none;">
+            <form id="quiz-form">
+                <div id="questions-container"></div>
+                <button type="submit">Kirim Jawaban</button>
+            </form>
+        </div>
+
+        <div id="result-section" style="display: none;">
+            <h2>Hasil Kuis</h2>
+            <p id="result-message"></p>
+            <button id="restart-quiz">Mulai Lagi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

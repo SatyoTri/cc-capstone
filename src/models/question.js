@@ -21,9 +21,8 @@ const questions = {
         "lorem ipsum dolor ",
         "lorem ipsum dolor ",
         "lorem ipsum dolor sit amet"
-        // Tambahkan pertanyaan lainnya di sini
     ],
-    // Tambahkan kategori lain jika diperlukan
+
 };
 
 module.exports = questions;

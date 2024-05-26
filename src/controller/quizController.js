@@ -27,29 +27,23 @@ exports.submitAnswers = (req, res) => {
         const answers = req.body.answers;
         const category = req.body.category.toLowerCase();
 
-        // Validasi jawaban
+
         if (!Array.isArray(answers) || answers.length !== 10 || answers.some(ans => ans !== 1 && ans !== 0)) {
             return res.status(400).json({ error: 'Invalid answers' });
         }
-
-        // Logika untuk menentukan apakah user menderita penyakit mental
-        // Di sini Anda dapat menggunakan model ML atau aturan heuristik sesuai kebutuhan
-
-        // Contoh sederhana: jika jumlah jawaban 'yes' lebih dari setengahnya, user dianggap menderita
+         
         const yesCount = answers.reduce((total, ans) => total + ans, 0);
         const isSuffering = yesCount > 5;
 
-        // Respons yang sesuai berdasarkan kategori
         const responseMessages = {
             anxiety: 'Anda terdeteksi terkena anxiety.',
             depression: 'Anda terdeteksi terkena depression.',
-            // Tambahkan kategori lainnya di sini
+      
         };
 
         const successMessage = responseMessages[category] || 'Anda mungkin menderita penyakit mental dari kategori yang Anda pilih.';
         const failureMessage = `Anda tidak terdeteksi terkena ${category}.`;
 
-        // Kirim hasil ke pengguna
         if (isSuffering) {
             res.json({ message: successMessage });
         } else {
